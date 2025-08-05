@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor">
+
+    <!-- Original Header -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/ash"
+        android:elevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- Back Button -->
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="Back"
+                android:src="@drawable/ic_arrow_back" />
+
+            <!-- Title -->
+            <TextView
+                android:layout_width="237dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@id/backButton"
+                android:text="Pet Journey"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <!-- Action Icons -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/searchButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_search"
+                    android:contentDescription="Search"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"/>
+
+                <ImageButton
+                    android:id="@+id/notificationButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/notification"
+                    android:contentDescription="Notifications"
+                    android:paddingLeft="12dp"
+                    android:paddingRight="12dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"/>
+
+                <ImageButton
+                    android:id="@+id/profileButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/profile"
+                    android:contentDescription="Profile"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Scrollable Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigation"
+        android:layout_below="@id/toolbar"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Daily Goals Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dog Training"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/dogtr"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Daily goals illustration"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start with basic obedience commands like sit, stay,and come using positive reinforcement with treats and praise. Keep training sessions short (5-10 minutes) and end on a positive note. Consistency is crucial - use the same commands and hand signals every time, and practice in different environments to help your dog generalize the behaviors."
+                android:textSize="16sp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- cat Goals Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cat Training"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/cattr"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Weekly goals illustration"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Use clicker training and high-value treats to teach desired behaviors. Work with your cat's natural schedule, training during their active periods (typically dawn and dusk). Focus on one behavior at a time, like coming when called or using a scratching post, and never punish unwanted behaviors as this can damage your bond."
+                android:textSize="16sp"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Training Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bird Training"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/birdtr"
+                android:scaleType="centerCrop"
+                android:layout_marginBottom="16dp"
+                android:contentDescription="Training illustration"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Train in a quiet environment using their favorite treats as rewards. Begin with simple tricks like step up onto your finger, keeping sessions under 15 minutes to maintain their attention. Use consistent verbal cues and be patient - birds may take longer to learn but can master complex behaviors with regular, positive training sessions."
+                android:textSize="16sp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Original Footer -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/ash"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/orange"
+        app:itemTextColor="@color/orange"
+        app:labelVisibilityMode="labeled"
+        app:elevation="10dp"/>
+</RelativeLayout>

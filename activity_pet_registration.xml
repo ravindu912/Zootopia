@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- Back Button -->
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Header Text -->
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Welcome To The Purr-Fect Journey!"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backButton" />
+
+        <TextView
+            android:id="@+id/subtitleText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Your Pet's Care Starts Here"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/titleText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="48dp"/>
+
+
+
+        <!-- Name Field -->
+
+        <TextView
+            android:id="@+id/nameLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pet's Name"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@id/catdogImage3"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/petNameEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter your pet's name"
+            android:textColor="@android:color/black"
+            android:background="@drawable/edittext_border"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/nameLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Age Field -->
+
+        <TextView
+            android:id="@+id/ageLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pet's Age"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@id/petNameEditText"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/petAgeEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter your pet's age"
+            android:inputType="number"
+            android:textColor="@android:color/black"
+            android:background="@drawable/edittext_border"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/ageLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Breed Field -->
+
+        <TextView
+            android:id="@+id/breedLabel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Pet's Breed"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@id/petAgeEditText"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/petBreedEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_border"
+            android:hint="Enter your pet's breed"
+            android:padding="16dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@id/breedLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Picture Field -->
+
+        <TextView
+            android:id="@+id/pictureLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pet's Picture (Optional)"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@id/petBreedEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="8dp"/>
+
+        <Button
+            android:id="@+id/uploadPictureButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@android:color/transparent"
+            android:text="Upload Picture"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toBottomOf="@id/pictureLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Continue Button -->
+        <Button
+            android:id="@+id/continueButton"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:backgroundTint="@android:color/black"
+            android:text="Continue"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            app:layout_constraintTop_toBottomOf="@id/uploadPictureButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"/>
+
+        <!-- Pet Image -->
+        <ImageView
+            android:id="@+id/catdogImage3"
+            android:layout_width="415dp"
+            android:layout_height="182dp"
+            android:src="@drawable/catdog"
+            app:layout_constraintTop_toBottomOf="@id/subtitleText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

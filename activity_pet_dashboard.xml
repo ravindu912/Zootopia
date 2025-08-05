@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    >
+
+    <!-- Top Bar with Search, Notification, Profile -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical"
+        >
+
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:hint="Search..."
+            android:background="@drawable/search_background"
+            android:paddingStart="16dp"
+            android:drawableStart="@drawable/ic_search"/>
+
+        <!-- Profile Button -->
+        <ImageButton
+            android:id="@+id/profileBtn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/profile"
+            android:contentDescription="Profile"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:scaleType="centerCrop"/>
+
+        <!-- Notification Button -->
+        <ImageButton
+            android:id="@+id/notificationBtn"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/notification"
+            android:contentDescription="Notifications"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_marginStart="8dp"
+            android:scaleType="centerCrop"
+            android:clickable="true"></ImageButton>  <!-- Explicitly make clickable -->
+        /> <!-- Required for proper interaction -->
+    </LinearLayout>
+
+    <!-- Main Content Area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottomNavigation"
+        android:layout_below="@id/topBar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Profile Picture Section -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+             >
+
+                <ImageView
+                    android:id="@+id/profilePic"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/profile"
+                    android:layout_gravity="center"
+                    android:scaleType="centerCrop"
+                    />
+            </FrameLayout>
+
+            <!-- Tips Slider Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tips for You"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="16dp"/>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:paddingHorizontal="8dp">
+
+                <LinearLayout
+                    android:id="@+id/tipsContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <!-- Tip Cards will be added programmatically -->
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/test1"
+                        android:layout_margin="8dp"
+                        android:scaleType="centerCrop"/>
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/test5"
+                        android:layout_margin="8dp"
+                        android:scaleType="centerCrop"/>
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/test3"
+                        android:layout_margin="8dp"
+                        android:scaleType="centerCrop"/>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Other Content Sections -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Daily Tasks"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:padding="16dp"/>
+
+            <!-- Add your ot<TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Daily Tasks"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:padding="16dp"/>
+
+    < Progress Bar Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="16dp"
+                android:paddingBottom="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Progress: "
+                        android:textColor="@android:color/black"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/progressText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0/5 tasks completed" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/dailyTasksProgress"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:progress="30"
+                android:progressDrawable="@drawable/custom_progress_bar" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/ash"
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/orange"
+        app:itemTextColor="@color/orange"
+        app:labelVisibilityMode="labeled"
+        app:elevation="10dp"/>
+
+
+</RelativeLayout>

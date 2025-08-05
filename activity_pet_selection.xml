@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/backgroundColor"
+    android:padding="24dp">
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick Your Pet Companion!"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="48dp"/>
+
+    <!-- Pet Images Grid -->
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        android:padding="8dp">
+
+        <!-- Dog -->
+        <ImageButton
+            android:id="@+id/dogButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/dog"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Select Dog"/>
+
+        <!-- Cat -->
+        <ImageButton
+            android:id="@+id/catButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cat"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Select Cat"/>
+
+        <!-- Bird -->
+        <ImageButton
+            android:id="@+id/birdButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bird"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Select Bird"/>
+
+        <!-- Fish -->
+        <ImageButton
+            android:id="@+id/fishButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="8dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/fish"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Select Fish"/>
+    </GridLayout>
+</LinearLayout>
